@@ -81,7 +81,7 @@ npm install
 npm install -g pm2
 
 -- 启动服务
-pm2 start ./bin/www --name 'chatroom' --watch
+pm2 start ./bin/www --name 'chatroom' --watch --ignore-watch="uploads"
 
 -- 重启服务
 pm2 restart chatroom

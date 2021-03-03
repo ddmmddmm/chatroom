@@ -14,7 +14,7 @@ let chatroom = function (io) {
             notAuth: 'AUTHENTICATION ERROR',
             notRoomId: 'ROOM ID EMPTY ERROR',
         };
-        let chatroomPrefix = 'DDMMCHATROOM-V2:';
+        let chatroomPrefix = commonConfig.REDIS_KEY_PREFIX.chatroom;
         let redisConfig = {
             msg: chatroomPrefix + 'msg-20191130-002:',
         };

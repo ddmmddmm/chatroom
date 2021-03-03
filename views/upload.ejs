@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>文件上传</title>
+    <style>
+        #btn {
+            width: 100px;
+            height: 30px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<form action="upload/uploadOne" method="post" enctype="multipart/form-data">
+    <div>
+        <input type="file" name="myFile">
+    </div>
+    <div>
+        <input type="submit" value="上传" id="btn">
+    </div>
+</form>
+<ul>
+    <% items.forEach(function(item){ %>
+    <li>
+        <%= item.createTime %>
+        <a href="/userUpload/<%= item.fileName %>" target="_blank">
+            <%= item.originalName %>
+        </a>
+    </li>
+    <% }) %>
+</ul>
+</body>
+</html>

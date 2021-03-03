@@ -5,11 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
 var index = require('./routes/index');
 var chatroom = require('./routes/chatroom');
 var users = require('./routes/users');
-
-
+var uploadView = require('./routes/upload');
 var app = express();
 
 // view engine setup
@@ -22,11 +22,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
+// 在 Express 中提供静态文件. https://expressjs.com/zh-cn/starter/static-files.html
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/userUpload', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/', index);
 app.use('/users', users);
 app.use('/chatroom', chatroom);
+app.use('/upload', uploadView);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

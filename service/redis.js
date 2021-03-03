@@ -15,12 +15,13 @@ redis.init = function (callback) {
     });
 };
 
-redis.rpushRedis = function (key, data) {
+redis.rpushRedis = function (key, data, callback) {
     var multi = client.multi();
     var rpushArr = [data];
     multi.rpush(key, rpushArr);
+    // redis事务 https://redisbook.readthedocs.io/en/latest/feature/transaction.html
     multi.exec(function (errors, results) {
-        console.log('rpush success');
+        'function' === typeof callback && callback(results);
     });
 };
 
@@ -30,7 +31,7 @@ redis.lrangeRedis = function (key, callback) {
             console.log('Error:' + err);
             return;
         }
-        callback(res);
+        'function' === typeof callback && callback(res);
     });
 };
 
