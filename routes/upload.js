@@ -50,8 +50,6 @@ router.post('/uploadOne', upload.single('myFile'), function (req, res, next) {
         res.redirect('/upload');
         return ;
     }
-    console.log(req.file);
-    console.log(req.body);
     // 原文件名
     var originalName = req.file.originalname;
     // 后缀名
@@ -59,9 +57,6 @@ router.post('/uploadOne', upload.single('myFile'), function (req, res, next) {
     // 新路径名
     var newPath = req.file.path + extName;
     var newFileName = req.file.filename + extName;
-    console.log('新路径名 ' + newPath);
-    console.log('新文件名 ' + newFileName);
-    console.log(req.headers);
 
     var info = {
         // 原始信息
