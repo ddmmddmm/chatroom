@@ -1,6 +1,6 @@
 # chatroom
 ## 线上地址
-http://115.159.115.254:9999/chatroom/hello
+http://kekeaiai.wang:9999/chatroom/hello
 
 ## 本地环境搭建
 #### centos安装nodejs
