@@ -494,7 +494,9 @@
 
         // 如果名字没获取到，不能往下执行，只能重载页面
         if (!myName) {
-            window.location.reload();
+            // 2021-03-08 有反馈说一直在重载页面，这里不能这么暴力重载页面，应该要加个提示
+            // window.location.reload();
+            window.alert('加载名字时出错，请刷新页面重试');
             return;
         }
 
@@ -746,12 +748,14 @@
     }
 
     function takeName(name) {
-        let rs = prompt("帮你取了个好听的名字，如果喜欢就点确定吧，也可以修改后再确定哦^_^", name);
+        // 2021-03-08 取名方式修改从弹框修改改为默认取
+        /*let rs = prompt("帮你取了个好听的名字，如果喜欢就点确定吧，也可以修改后再确定哦^_^", name);
         if (rs && rs.length > 5) {
             alert('名字太长啦~');
             return null;
         }
-        return rs;
+        return rs;*/
+        return name;
     }
 
     function getKejiImg(timeStr) {
