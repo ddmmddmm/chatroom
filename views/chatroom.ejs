@@ -500,7 +500,7 @@
             return;
         }
 
-        $psw_input.bind('keyup', function (e) {
+        $psw_input.bind('keydown', function (e) {
             e.cancelBubble=true;
             e.preventDefault();
             e.stopPropagation();
