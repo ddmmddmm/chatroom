@@ -151,6 +151,11 @@
             border-radius: 5px;
         }
 
+        #content .msg-box span{
+            /*html \n 换行*/
+            white-space: pre-line;
+        }
+
         .clear {
             clear: both
         }
@@ -500,12 +505,8 @@
             return;
         }
 
-        $psw_input.bind('keydown', function (e) {
-            e.cancelBubble=true;
-            e.preventDefault();
-            e.stopPropagation();
-            // enter提交，shift+enter不提交，可以换行
-            if (!e.shiftKey && 13 === e.keyCode) {
+        $psw_input.bind('keyup', function (e) {
+            if (13 === e.keyCode) {
                 auth();
             }
         });
@@ -573,8 +574,11 @@
 	    },2000);
         };*/
 
-        $input_box.bind('keyup', function (e) {
-            if (13 === e.keyCode) {
+        $input_box.bind('keydown', function (e) {
+            if (!e.shiftKey && 13 === e.keyCode) {
+                e.cancelBubble = true;
+                e.preventDefault();
+                e.stopPropagation();
                 say();
             }
         });
