@@ -501,7 +501,11 @@
         }
 
         $psw_input.bind('keyup', function (e) {
-            if (13 === e.keyCode) {
+            e.cancelBubble=true;
+            e.preventDefault();
+            e.stopPropagation();
+            // enter提交，shift+enter不提交，可以换行
+            if (!e.shiftKey && 13 === e.keyCode) {
                 auth();
             }
         });
@@ -858,7 +862,7 @@
             "佳钰", "佳玉", "晓庆", "一鸣", "语晨", "添池", "添昊", "雨泽", "雅晗", "雅涵",
             "清妍", "诗悦", "嘉乐", "晨涵", "天赫", "玥傲", "佳昊", "天昊", "萌萌", "若萌"
         ];
-        return familyNames[getRandomInt(0, 100)] + givenNames[getRandomInt(0, 100)];
+        return familyNames[getRandomInt(0, 99)] + givenNames[getRandomInt(0, 100)];
     }
 </script>
 </body>
