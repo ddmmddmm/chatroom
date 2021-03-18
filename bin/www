@@ -14,7 +14,7 @@ var chatroom = require('../service/chatroom');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '9999');
+var port = normalizePort(process.env.PORT || '80');
 app.set('port', port);
 
 /**
