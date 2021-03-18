@@ -9,8 +9,11 @@ module.exports = {
     PSW_MAP: {
         '666': 'a9b8123364d9d82d91231b357b111236',
     },
+    // redis配置前缀
     REDIS_KEY_PREFIX: {
         'upload':'UPLOAD_FILE:',
         'chatroom':'DDMMCHATROOM-V2:',
-    }
+    },
+    // 默认房间名
+    DEFAULT_ROOM_ID: 'hello'
 };

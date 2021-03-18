@@ -26,7 +26,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/userUpload', express.static(path.join(__dirname, 'uploads')));
 
-app.use('/', index);
+// app.use('/', index);
+app.use('/', chatroom);
 app.use('/users', users);
 app.use('/chatroom', chatroom);
 app.use('/upload', uploadView);
