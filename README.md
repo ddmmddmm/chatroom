@@ -1,6 +1,6 @@
 # chatroom
 ## 线上地址
-http://kekeaiai.wang:9999/chatroom/hello
+http://kekeaiai.wang
 
 ## 本地环境搭建
 #### centos安装nodejs
@@ -96,7 +96,7 @@ pm2 show chatroom
 pm2 monit
 
 -- 本地访问
-http://127.0.0.1:9999/chatroom
+http://127.0.0.1
 ```
 
 ## 目录结构
