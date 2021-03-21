@@ -7,8 +7,4 @@ router.get('/', function (req, res, next) {
     res.render('chatroom', {'title': '房间号: ' + roomId, 'roomId': roomId});
 });
 
-router.get('/:roomId', function (req, res, next) {
-    res.render('chatroom', {'title': '房间号: ' + roomId, 'roomId': roomId});
-});
-
 module.exports = router;
